@@ -23,13 +23,8 @@ def main():
         database = st.radio('fonte dos dados de entrada (X):',('Manual', 'CSV'))
         
         if database == 'CSV':
-	st.info('Upload do CSV')
-	file = st.file_uploader('Selecione o arquivo CSV contendo as colunas acima descritas',type='São Paulo - csv')
-	file = st.file_uploader('Selecione o arquivo CSV contendo as colunas acima descritas',type='Rio de Janeiro - csv')
-	file = st.file_uploader('Selecione o arquivo CSV contendo as colunas acima descritas',type='Goiania - csv')
-	file = st.file_uploader('Selecione o arquivo CSV contendo as colunas acima descritas',type='Guarulhos - csv')
-	file = st.file_uploader('Selecione o arquivo CSV contendo as colunas acima descritas',type='Salvador - csv')
-            if file:
+            st.info('Upload do CSV')
+            file = st.file_uploader('Selecione o arquivo CSV contendo as colunas acima descritas',type='São Paulo - csv')
                 Xtest = pd.read_csv(file)
                 mdl_lgbm = pickle.load(open('pickle_mdl_lgbm_select.pkl', 'rb'))
                 ypred = mdl_lgbm.predict(Xtest)
