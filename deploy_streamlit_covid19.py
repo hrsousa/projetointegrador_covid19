@@ -27,11 +27,11 @@ def main():
             file = st.file_uploader('Selecione o arquivo CSV contendo as colunas acima descritas',type='csv')
             if file:
                 Xtest = pd.read_csv(file)
-                mdl_lgbm = pickle.load(open('pickle_mdl_lgbm_select.pkl', 'rb'))
+                mdl_lgbm = pickle.load(open('pickle_mdl_lregression_select.pkl', 'rb'))
                 ypred = mdl_lgbm.predict(Xtest)				    
             if file:
                 Xtest = pd.read_csv(file)
-                mdl_lgbm = pickle.load(open('pickle_mdl_lgbm_select.pkl', 'rb'))
+                mdl_lgbm = pickle.load(open('pickle_mdl_lregression_select.pkl', 'rb'))
                 ypred = mdl_lgbm.predict(Xtest)
         else:
             X1 = st.slider('Idade do paciente de 0 a 109 anos',0,109,step=1)
