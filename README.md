@@ -1,2 +1,3 @@
-# projetointegrador_covid19
-Este é um repositório de arquivos do Projeto Integrador do Curso de Data Science da Digital House de 2021
+# Escola Digital House - Aula Deploy - Case Ifood
+O objetivo principal deste app é realizar predições sobre a chance de um cliente converter em uma dada campanha de mkt.
+O modelo treinado foi o LGBM.
