@@ -70,7 +70,7 @@ def main():
                                       'NEUROLOGIC': [X21], 'PNEUMOPATI': [X22], 'IMUNODEPRE': [X23],
                                       'RENAL': [X24], 'OBESIDADE': [X25]})
             
-            mdl_lgbm = pickle.load(open('pickle_mdl_lgbm_select.pkl', 'rb'))
+            mdl_lgbm = pickle.load(open('pickle_mdl_lregression_select.pkl', 'rb'))
             ypred = mdl_lgbm.predict(Xtest)
                                      
 ##################################################################################################################
