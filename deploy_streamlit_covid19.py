@@ -8,13 +8,13 @@ import pickle
 def main():        
     
     st.set_page_config(page_title = 'Simulador - Modelo de Sobrevivência do COVID-19',\
-                       page_icon = 'logo_covid',
+                       page_icon = 'logo_covid.jpg',
                        layout='wide',
                        initial_sidebar_state = 'expanded')
     
     c1, c2 = st.columns([3,1])
     c1.title('COVID-19 Survivor')
-    c2.image('logo_dh.jpeg', width=100)
+    c2.image('logo_covid.jpg', width=100)
     with st.expander('Descrição do App',expanded=True):
         st.markdown('O objetivo principal desta ferramenta é realizar predições sobre a chance de um paciente sobreviver considerando as suas comorbidades e outras variavies clinicas caso seja contaminado pelo COVID 19')
     
