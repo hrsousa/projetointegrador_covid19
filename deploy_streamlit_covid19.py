@@ -8,7 +8,7 @@ import pickle
 def main():        
     
     st.set_page_config(page_title = 'COVID-19 Survivor',\
-                       page_icon = 'logo_covid',
+                       page_icon = 'logo_covid.jpg',
                        layout='wide',
                        initial_sidebar_state = 'expanded')
     
