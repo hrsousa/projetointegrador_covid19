@@ -24,11 +24,11 @@ def main():
         
         if database == 'CSV':
 		st.info('Upload do CSV')
-            	file = st.file_uploader('Selecione o arquivo CSV contendo as colunas acima descritas',type='São Paulo - csv')
-           	file = st.file_uploader('Selecione o arquivo CSV contendo as colunas acima descritas',type='Rio de Janeiro - csv')
-         	file = st.file_uploader('Selecione o arquivo CSV contendo as colunas acima descritas',type='Goiania - csv')
-          	file = st.file_uploader('Selecione o arquivo CSV contendo as colunas acima descritas',type='Guarulhos - csv')
-          	file = st.file_uploader('Selecione o arquivo CSV contendo as colunas acima descritas',type='Salvador - csv')
+		file = st.file_uploader('Selecione o arquivo CSV contendo as colunas acima descritas',type='São Paulo - csv')
+		file = st.file_uploader('Selecione o arquivo CSV contendo as colunas acima descritas',type='Rio de Janeiro - csv')
+		file = st.file_uploader('Selecione o arquivo CSV contendo as colunas acima descritas',type='Goiania - csv')
+		file = st.file_uploader('Selecione o arquivo CSV contendo as colunas acima descritas',type='Guarulhos - csv')
+		file = st.file_uploader('Selecione o arquivo CSV contendo as colunas acima descritas',type='Salvador - csv')
             if file:
                 Xtest = pd.read_csv(file)
                 mdl_lgbm = pickle.load(open('pickle_mdl_lgbm_select.pkl', 'rb'))
