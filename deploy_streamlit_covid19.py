@@ -14,7 +14,7 @@ def main():
     
     c1, c2 = st.columns([3,1])
     c1.title('Simulador - Sobrevivência do COVID-19')
-    c2.image('logo_covid.jpg', width=100)
+    c2.image('logo_covid.jpg', width=300)
     with st.expander('Descrição do App',expanded=True):
         st.markdown('O objetivo principal desta ferramenta é realizar predições sobre a chance de um paciente sobreviver considerando as suas comorbidades e outras variavies clinicas caso seja contaminado pelo COVID 19')
     
@@ -78,11 +78,11 @@ def main():
     if database == 'Manual':
         with st.expander('Visualizar Dados de Entrada', expanded = False):
                 st.dataframe(Xtest)
-        with st.expander('Visualizar Predição', expanded = False):
+        with st.expander('Visualizar Predição', expanded = True):
                 if ypred==0:
                     st.error(ypred[0])
                 else:
-                    st.success(ypred[1])
+                    st.success(ypred[0])
                     
         if st.button('Baixar arquivo csv'):
             df_download = Xtest.copy()
