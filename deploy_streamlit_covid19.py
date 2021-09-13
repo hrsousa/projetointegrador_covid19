@@ -35,7 +35,7 @@ def main():
                 ypred = mdl_lgbm.predict(Xtest)
         else:
             X1 = st.slider('Idade do paciente de 0 a 109 anos',0,109,step=1)
-            X2 = st.slider('Sexo do paciente? (0 - Masculino | 1 - Feminino)',0,1,step=1)
+            X2 = st.sidebar.selectbox('Sexo do paciente? (0 - Masculino | 1 - Feminino),(0,1))
             X3 = st.slider('Paciente tem pneumonia nosocomial? (0 - Não | 1 - Sim)',0,1,step=1)
             X4 = st.slider('Paciente tem febre? (0 - Não | 1 - Sim)',0,1,step=1)
             X5 = st.slider('Paciente tem tosse? (0 - Não | 1 - Sim)',0,1,step=1)
