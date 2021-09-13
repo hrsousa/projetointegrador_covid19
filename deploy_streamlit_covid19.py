@@ -79,10 +79,10 @@ def main():
         with st.expander('Visualizar Dados de Entrada', expanded = False):
                 st.dataframe(Xtest)
         with st.expander('Visualizar Predição', expanded = False):
-                if ypred==0:
-                    st.error(ypred[0])
+                if ypred==1:
+                    st.error(ypred[2])
                 else:
-                    st.success(ypred[0])
+                    st.success(ypred[1])
                     
         if st.button('Baixar arquivo csv'):
             df_download = Xtest.copy()
