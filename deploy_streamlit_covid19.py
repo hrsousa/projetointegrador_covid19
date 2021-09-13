@@ -80,7 +80,7 @@ def main():
                 st.dataframe(Xtest)
         with st.expander('Visualizar Predição', expanded = False):
                 if ypred==1:
-                    st.error(ypred[2])
+                    st.error(ypred[1])
                 else:
                     st.success(ypred[1])
                     
