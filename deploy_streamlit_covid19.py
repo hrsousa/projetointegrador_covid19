@@ -7,16 +7,16 @@ import pickle
 #streamlit
 def main():        
 	
+    st.set_page_config(page_title = 'COVID-19 Survivor',\
+                       page_icon = 'logo_covid.jpg',
+                       layout='wide',
+                       initial_sidebar_state = 'expanded')
+
     HTML_BANNER = """
         <div style="background-color:#464e5f;padding:10px;border-radius:10px">
 	<h1 style="color:red;text-align:center;">COVID-19 Survivor </h1>
 	</div>
 	"""
-
-    st.set_page_config(page_title = 'COVID-19 Survivor',\
-                       page_icon = 'logo_covid.jpg',
-                       layout='wide',
-                       initial_sidebar_state = 'expanded')
     
     c1, c2 = st.columns([3,1])
     c1.title('Simulador - Sobrevivência do COVID-19')
