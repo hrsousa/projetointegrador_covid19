@@ -4,6 +4,12 @@ import numpy as np
 import base64
 import pickle
 
+HTML_BANNER = """
+    <div style="background-color:#464e5f;padding:10px;border-radius:10px">
+    <h1 style="color:red;text-align:center;">COVID-19 Survivor </h1>
+    </div>
+    """
+
 #streamlit
 def main():        
     
