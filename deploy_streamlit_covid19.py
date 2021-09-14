@@ -4,6 +4,12 @@ import numpy as np
 import base64
 import pickle
 
+Não = 0
+Sim = 1
+Talvez = 9
+M = 0
+F = 1
+
 #streamlit
 def main():        
     
@@ -35,8 +41,8 @@ def main():
                 ypred = mdl_lgbm.predict(Xtest)
         else:
             X1 = st.slider('Idade do paciente de 0 a 109 anos',0,109,step=1)
-            X2 = st.sidebar.selectbox('Sexo do paciente? (0 - Masculino | 1 - Feminino)',('Masculino','Feminino'))
-            X3 = st.sidebar.selectbox('Paciente tem pneumonia nosocomial? (0 - Não | 1 - Sim)',(0,1,9))
+            X2 = st.sidebar.selectbox('Sexo do paciente? (0 - Masculino | 1 - Feminino)',(M,F))
+            X3 = st.sidebar.selectbox('Paciente tem pneumonia nosocomial? (0 - Não | 1 - Sim)',(Não,Sim,Talvez))
             X4 = st.sidebar.selectbox('Paciente tem febre? (0 - Não | 1 - Sim)',(0,1))
             X5 = st.sidebar.selectbox('Paciente tem tosse? (0 - Não | 1 - Sim)',(0,1))
             X6 = st.sidebar.selectbox('Paciente tem dor de garganta? (0 - Não | 1 - Sim)',(0,1))
