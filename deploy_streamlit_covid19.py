@@ -4,12 +4,6 @@ import numpy as np
 import base64
 import pickle
 
-Não = 0
-Sim = 1
-Talvez = 9
-M = 0
-F = 1
-
 #streamlit
 def main():        
     
@@ -41,34 +35,54 @@ def main():
                 ypred = mdl_lgbm.predict(Xtest)
         else:
             X1 = st.slider('Idade do paciente de 0 a 109 anos',0,109,step=1)
-            X2 = st.sidebar.selectbox('Sexo do paciente? (0 - Masculino | 1 - Feminino)',(M,F))
-            X3 = st.sidebar.selectbox('Paciente tem pneumonia nosocomial? (0 - Não | 1 - Sim)',(Não,Sim,Talvez))
-            X4 = st.sidebar.selectbox('Paciente tem febre? (0 - Não | 1 - Sim)',(0,1))
-            X5 = st.sidebar.selectbox('Paciente tem tosse? (0 - Não | 1 - Sim)',(0,1))
-            X6 = st.sidebar.selectbox('Paciente tem dor de garganta? (0 - Não | 1 - Sim)',(0,1))
-            X7 = st.sidebar.selectbox('Paciente tem falta de ar? (0 - Não | 1 - Sim)',(0,1))
-            X8 = st.sidebar.selectbox('Paciente tem saturação baixa? (0 - Não | 1 - Sim)',(0,1))
-            X9 = st.sidebar.selectbox('Paciente tem diarreia? (0 - Não | 1 - Sim)',(0,1))
-            X10 = st.sidebar.selectbox('Paciente tem vômitos? (0 - Não | 1 - Sim)',(0,1))
-            X11 = st.sidebar.selectbox('Paciente tem dor abdominal? (0 - Não | 1 - Sim)',(0,1))
-            X12 = st.sidebar.selectbox('Paciente tem fadiga? (0 - Não | 1 - Sim)',(0,1))
-            X13 = st.sidebar.selectbox('Paciente tem perda de olfato? (0 - Não | 1 - Sim)',(0,1))
-            X14 = st.sidebar.selectbox('Paciente tem perda de paladar? (0 - Não | 1 - Sim)',(0,1))
-            X15 = st.sidebar.selectbox('Paciente tem problemas cardíacos? (0 - Não | 1 - Sim)',(0,1))
-            X16 = st.sidebar.selectbox('Paciente tem problemas sanguíneos (trombose, anemia, linfoma e leucemia)?  (0 - Não | 1 - Sim)',(0,1))
-            X17 = st.sidebar.selectbox('Paciente tem síndrome de Down? (0 - Não | 1 - Sim)',(0,1))
-            X18 = st.sidebar.selectbox('Paciente tem problemas no fígado? (0 - Não | 1 - Sim)',(0,1))
-            X19 = st.sidebar.selectbox('Paciente tem asma? (0 - Não | 1 - Sim)',(0,1))
-            X20 = st.sidebar.selectbox('Paciente tem diabetes? (0 - Não | 1 - Sim)',(0,1))
-            X21 = st.sidebar.selectbox('Paciente tem problemas neurológicos? (0 - Não | 1 - Sim)',(0,1))
-            X22 = st.sidebar.selectbox('Paciente tem problemas pulmonares? (0 - Não | 1 - Sim)',(0,1))
-            X23 = st.sidebar.selectbox('Paciente tem imunodepressão (HIV/Câncer)? (0 - Não | 1 - Sim)',(0,1))
-            X24 = st.sidebar.selectbox('Paciente tem problemas nos rins? (0 - Não | 1 - Sim)',(0,1))
-            X25 = st.sidebar.selectbox('Paciente é obeso? (0 - Não | 1 - Sim)',(0,1))
+            X2 = st.sidebar.selectbox('Qual o sexo do paciente? (0 - Masculino | 1 - Feminino)',(0,1))
+            X3 = st.sidebar.selectbox('Paciente gestante? (Idade gestacional da paciente) (0 - Não | 1 - Sim)',(0,1))
+            X4 = st.sidebar.selectbox('Cor ou raça declarada pelo paciente (0 - Não | 1 - Sim)',(0,1))
+            X5 = st.sidebar.selectbox('Nível de escolaridade do paciente (0 - Não | 1 - Sim)',(0,1))
+            X6 = st.sidebar.selectbox('Tem histórico de viagem internacional nos últimos 14 dias? (0 - Não | 1 - Sim)',(0,1))
+            X7 = st.sidebar.selectbox('É caso proveniente de surto de Síndrome Gripal que evoluiu para Síndrome Respiratória Aguda Grave? (0 - Não | 1 - Sim)',(0,1))
+            X8 = st.sidebar.selectbox('Trata-se de caso nosocomial (infecção adquirida no hospital)? Caso de SRAG com infecção adquirida após internação? (0 - Não | 1 - Sim)',(0,1))
+            X9 = st.sidebar.selectbox('Paciente trabalha ou tem contato direto com aves, suínos, ou outro animal? (0 - Não | 1 - Sim)',(0,1))
+            X10 = st.sidebar.selectbox('Paciente apresentou febre? (0 - Não | 1 - Sim)',(0,1))
+            X11 = st.sidebar.selectbox('Paciente apresentou tosse? (0 - Não | 1 - Sim)',(0,1))
+            X12 = st.sidebar.selectbox('Paciente apresentou dor de garganta? (0 - Não | 1 - Sim)',(0,1))
+            X13 = st.sidebar.selectbox('Paciente apresentou dispneia (falta de ar)? (0 - Não | 1 - Sim)',(0,1))
+            X14 = st.sidebar.selectbox('Paciente apresentou desconforto respiratório? (0 - Não | 1 - Sim)',(0,1))
+            X15 = st.sidebar.selectbox('Paciente apresentou saturação O2 menor que 95%? (0 - Não | 1 - Sim)',(0,1))
+            X16 = st.sidebar.selectbox('Paciente apresentou diarreia?  (0 - Não | 1 - Sim)',(0,1))
+            X17 = st.sidebar.selectbox('Paciente apresentou vômitos? (0 - Não | 1 - Sim)',(0,1))
+            X18 = st.sidebar.selectbox('Paciente apresentou dor abdominal? (0 - Não | 1 - Sim)',(0,1))
+            X19 = st.sidebar.selectbox('Paciente apresentou fadiga? (0 - Não | 1 - Sim)',(0,1))
+            X20 = st.sidebar.selectbox('Paciente apresentou perda de olfato? (0 - Não | 1 - Sim)',(0,1))
+            X21 = st.sidebar.selectbox('Paciente apresentou perda de paladar? (0 - Não | 1 - Sim)',(0,1))
+            X22 = st.sidebar.selectbox('Paciente apresentou outro(s) sintoma(s)? (0 - Não | 1 - Sim)',(0,1))
+            X23 = st.sidebar.selectbox('Paciente apresenta algum fator de risco? (0 - Não | 1 - Sim)',(0,1))
+            X24 = st.sidebar.selectbox('Paciente é puérpera ou parturiente (mulher que pariu recentemente – até 45 dias do parto)? (0 - Não | 1 - Sim)',(0,1))
+            X25 = st.sidebar.selectbox('Paciente possui Doença Cardiovascular Crônica? (0 - Não | 1 - Sim)',(0,1))
+            X26 = st.sidebar.selectbox('Paciente possui Doença Hematológica Crônica? (0 - Não | 1 - Sim)',(0,1))
+            X27 = st.sidebar.selectbox('Paciente possui síndrome de Down? (0 - Não | 1 - Sim)',(0,1))
+            X28 = st.sidebar.selectbox('Paciente possui Doença Hepática Crônica? (0 - Não | 1 - Sim)',(0,1))
+            X29 = st.sidebar.selectbox('Paciente possui asma? (0 - Não | 1 - Sim)',(0,1))
+            X30 = st.sidebar.selectbox('Paciente possui diabetes? (0 - Não | 1 - Sim)',(0,1))
+            X31 = st.sidebar.selectbox('Paciente possui Doença Neurológica? (0 - Não | 1 - Sim)',(0,1))
+            X32 = st.sidebar.selectbox('Paciente possui outra pneumopatia crônica? (0 - Não | 1 - Sim)',(0,1))
+            X33 = st.sidebar.selectbox('Paciente possui Imunodeficiência ou Imunodepressão (diminuição da função do sistema imunológico)? (0 - Não | 1 - Sim)',(0,1))
+            X34 = st.sidebar.selectbox('Paciente possui Doença Renal Crônica?? (0 - Não | 1 - Sim)',(0,1))
+            X35 = st.sidebar.selectbox('Paciente possui obesidade? (0 - Não | 1 - Sim)',(0,1))
+            X36 = st.sidebar.selectbox('Paciente possui outro(s) fator(es) de risco?(0 - Não | 1 - Sim)',(0,1))
+            X37 = st.sidebar.selectbox('Fez uso de antiviral para gripe? (0 - Não | 1 - Sim)',(0,1))
+            X38 = st.sidebar.selectbox('Paciente foi internado em UTI? (0 - Não | 1 - Sim)',(0,1))
+            X39 = st.sidebar.selectbox('Paciente fez uso de suporte ventilatório (ventilação mecânica)? (0 - Não | 1 - Sim)',(0,1))
+            X40 = st.sidebar.selectbox('Informar resultado de Raio X de tórax (0 - Não | 1 - Sim)',(0,1))
+            X41 = st.sidebar.selectbox('Informar resultado da tomografia (0 - Não | 1 - Sim)',(0,1))
+            X42 = st.sidebar.selectbox('Resultado do teste de RT-PCR/outro método por Biologia Molecular (0 - Não | 1 - Sim)',(0,1))
+            X43 = st.sidebar.selectbox('Resultado da Sorologia para SARS-CoV-2 (IgA) (0 - Não | 1 - Sim)',(0,1))
+            X44 = st.sidebar.selectbox('Resultado da Sorologia para SARS-CoV-2 (IgG) (0 - Não | 1 - Sim)',(0,1))
+            X45 = st.sidebar.selectbox('Resultado da Sorologia para SARS-CoV-2 (IgM) (0 - Não | 1 - Sim)',(0,1))
 
 
-            Xtest = pd.DataFrame({'IDADE_ANOS': [X1], 'CS_SEXO': [X2], 'NOSOCOMIAL': [X3], 'FEBRE': [X4], 
-                                      'TOSSE': [X5], 'GARGANTA': [X6], 'DISPNEIA': [X7], 'SATURACAO': [X8], 
+            Xtest = pd.DataFrame({'IDADE_ANOS': [X1], 'CS_SEXO': [X2], 'CS_GESTANT': [X3], 'CS_RACA': [X4], 
+                                      'CS_ESCOL_N': [X5], 'HISTO_VGM': [X6], 'SURTO_SG': [X7], 'NOSOCOMIAL': [X8], 
                                       'DIARREIA': [X9], 'VOMITO': [X10], 'DOR_ABD': [X11], 
                                       'FADIGA': [X12], 'PERD_OLFT': [X13], 'PERD_PALA': [X14],
                                       'CARDIOPATI': [X15], 'HEMATOLOGI': [X16], 'SIND_DOWN': [X17],
