@@ -83,12 +83,19 @@ def main():
 
             Xtest = pd.DataFrame({'IDADE_ANOS': [X1], 'CS_SEXO': [X2], 'CS_GESTANT': [X3], 'CS_RACA': [X4], 
                                       'CS_ESCOL_N': [X5], 'HISTO_VGM': [X6], 'SURTO_SG': [X7], 'NOSOCOMIAL': [X8], 
-                                      'DIARREIA': [X9], 'VOMITO': [X10], 'DOR_ABD': [X11], 
-                                      'FADIGA': [X12], 'PERD_OLFT': [X13], 'PERD_PALA': [X14],
-                                      'CARDIOPATI': [X15], 'HEMATOLOGI': [X16], 'SIND_DOWN': [X17],
-                                      'HEPATICA': [X18], 'ASMA': [X19], 'DIABETES': [X20],
-                                      'NEUROLOGIC': [X21], 'PNEUMOPATI': [X22], 'IMUNODEPRE': [X23],
-                                      'RENAL': [X24], 'OBESIDADE': [X25]})
+                                      'AVE_SUINO': [X9], 'FEBRE': [X10], 'TOSSE': [X11], 
+                                      'GARGANTA': [X12], 'DISPNEIA': [X13], 'DESC_RESP': [X14],
+                                      'SATURACAO': [X15], 'DIARREIA': [X16], 'VOMITO': [X17],
+                                      'DOR_ABD': [X18], 'FADIGA': [X19], 'PERD_OLFT': [X20],
+                                      'PERD_PALA': [X21], 'OUTRO_SIN': [X22], 'FATOR_RISC': [X23],
+                                      'PUERPERA': [X24], 'CARDIOPATI': [X25], 'HEMATOLOGI': [X26],
+                                      'SIND_DOWN': [X27], 'HEPATICA': [X28], 'ASMA': [X29],
+                                      'DIABETES': [X30], 'NEUROLOGIC': [X31], 'PNEUMOPATI': [X32],
+                                      'IMUNODEPRE': [X33], 'RENAL': [X34], 'OBESIDADE': [X35],
+                                      'OUT_MORBI': [X36], 'ANTIVIRAL': [X37], 'UTI': [X38],
+                                      'SUPORT_VEN': [X39], 'RAIOX_RES': [X40], 'TOMO_RES': [X41],
+                                      'PCR_RESUL': [X42], 'RES_IGA': [X43], 'RES_IGG': [X44],
+                                      'RES_IGM': [X45]})
             
             mdl_lgbm = pickle.load(open('pickle_mdl_lregression_select.pkl', 'rb'))
             ypred = mdl_lgbm.predict(Xtest)
