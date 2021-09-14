@@ -11,16 +11,10 @@ def main():
                        page_icon = 'logo_covid.jpg',
                        layout='wide',
                        initial_sidebar_state = 'expanded')
-
-    HTML_BANNER = """
-        <div style="background-color:#464e5f;padding:10px;border-radius:10px">
-	<h1 style="color:red;text-align:center;">COVID-19 Survivor </h1>
-	</div>
-	"""
     
-    #c1, c2 = st.columns([3,1])
-    #c1.title('Simulador - Sobrevivência do COVID-19')
-    #c2.image('logo_covid.jpg', width=300)
+    c1, c2 = st.columns([3,1])
+    c1.title('Simulador - Sobrevivência do COVID-19')
+    c2.image('logo_covid.jpg', width=300)
     with st.expander('Descrição do App',expanded=True):
         st.markdown('O objetivo principal desta ferramenta é realizar predições sobre a chance de um paciente sobreviver considerando as suas comorbidades e outras variáveis clinicas caso seja contaminado pelo COVID 19')
     
