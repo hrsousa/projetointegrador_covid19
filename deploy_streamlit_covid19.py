@@ -1,7 +1,5 @@
 import streamlit as st
 import pandas as pd 
-from matplotlib import pyplot as plt
-from plotly import graph_objs as go
 import numpy as np 
 import base64
 import pickle
